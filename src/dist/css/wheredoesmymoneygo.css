@@ -1,18 +1,11 @@
 /* Variables and mixins */
 .form-control {
-  height: 50px;
+  height: 60px;
   padding: 0px 20px;
   -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
-  /*.form-control-border();*/
-  /**/
-  /*&:focus {*/
-  /*	.form-control-border-focus();*/
-  /*}*/
-  /*&:hover {*/
-  /*	.form-control-border-hover();*/
-  /*}*/
+  font-size: 30px;
 }
 /* General styles */
 body {
@@ -23,4 +16,62 @@ body {
 /* Bootstrap customizations */
 .control-label {
   color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 600;
+}
+/* Page specific */
+.header .header-img {
+  width: 74px;
+  height: 72px;
+  background: url(/img/sprite.png) 0 0;
+  margin: 20px auto;
+  background-size: cover;
+}
+.content .section {
+  padding: 20px;
+}
+.content .section .section-description {
+  font-size: 20px;
+}
+.content .section .section-value {
+  font-size: 30px;
+}
+.content .section .section-img {
+  float: right;
+  width: 36px;
+  height: 50px;
+  background: url(/img/sprite.png) 36px 0px;
+  background-size: 224px 72px;
+}
+.content .section.section-tax,
+.content .section.section-net-wage {
+  height: 200px;
+}
+.content .section.section-tax {
+  background-color: #f1c40f;
+}
+.content .section.section-tax .section-img {
+  width: 50px;
+  height: 50px;
+  background: url(/img/sprite.png) 134px 0px;
+  background-size: 224px 72px;
+}
+.content .section.section-piz {
+  background-color: #3498db;
+}
+.content .section.section-zz {
+  background-color: #8e44ad;
+}
+.content .section.section-sv {
+  background-color: #e74c3c;
+}
+.content .section.section-job-security {
+  background-color: #27ae60;
+}
+.content .section.section-net-wage {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.footer {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.8);
 }

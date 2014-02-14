@@ -1,4 +1,4 @@
-<form role="form">
+<form action="" role="form" data-ng-submit="calculateAmounts()">
     <div class="form-group">
         <div class="row">
             <label for="input-gross-wage" class="control-label">Vpiši svoj mesečni bruto</label>
@@ -9,3 +9,39 @@
         </div>
     </div>
 </form>
+
+<div class="row section section-tax" data-ng-show="!!taxAmount">
+    <div class="section-value">{{ taxAmount | currency:"€" }}</div>
+    <div class="section-description">Dohodnina</div>
+    <a href="#" data-ng-click="showTaxPageCategorized()"><div class="section-img"></div></a>
+</div>
+
+<div class="row section section-piz" data-ng-show="!!pizAmount">
+    <div class="section-value">{{ pizAmount | currency:"€" }}</div>
+    <div class="section-description">Prispevek za pokojninsko in invalidsko zavarovanje</div>
+    <div class="section-img"></div>
+</div>
+
+<div class="row section section-zz" data-ng-show="!!zzAmount">
+    <div class="section-value">{{ zzAmount | currency:"€" }}</div>
+    <div class="section-description">Prispevek za obvezno zdravstveno zavarovanje</div>
+    <div class="section-img"></div>
+</div>
+
+<div class="row section section-sv" data-ng-show="!!svAmount">
+    <div class="section-value">{{ svAmount | currency:"€" }}</div>
+    <div class="section-description">Prispevek za starševsko varstvo</div>
+    <div class="section-img"></div>
+</div>
+
+<div class="row section section-job-security" data-ng-show="!!jobSecurityAmount">
+    <div class="section-value">{{ jobSecurityAmount | currency:"€" }}</div>
+    <div class="section-description">Prispevek za zaposlovanje</div>
+    <div class="section-img"></div>
+</div>
+
+<div class="row section section-net-wage" data-ng-show="!!jobSecurityAmount">
+    <div class="section-value">{{ netWage | currency:"€" }}</div>
+    <div class="section-description">Neto plača</div>
+    <div class="section-img"></div>
+</div>

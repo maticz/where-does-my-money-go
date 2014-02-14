@@ -8,20 +8,12 @@
 @large-font-size: 30px;
 
 .form-control {
-	height: 50px;
+	height: 60px;
 	padding: 0px 20px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
     border: none;
-	/*.form-control-border();*/
-	/**/
-	/*&:focus {*/
-	/*	.form-control-border-focus();*/
-	/*}*/
-
-	/*&:hover {*/
-	/*	.form-control-border-hover();*/
-	/*}*/
+    font-size: @large-font-size;
 }
 
 /* General styles */
@@ -36,4 +28,81 @@ body {
 
 .control-label {
     color: @default-font-color !important;
+    font-size: @default-font-size !important;
+    font-weight: 600;
+}
+
+/* Page specific */
+
+.header {
+    .header-img {
+        width: 74px;
+        height: 72px;
+        background: url(/img/sprite.png) 0 0;
+        margin: 20px auto;
+        background-size: cover;
+    }
+}
+
+.content {
+    .section {
+        padding: 20px;
+
+        .section-description {
+            font-size: @default-font-size;
+        }
+
+        .section-value {
+            font-size: @large-font-size;
+        }
+        
+        .section-img {
+            float: right;
+            width: 36px;
+            height: 50px;
+            background: url(/img/sprite.png) 36px 0px;
+            background-size: 224px 72px;
+        }
+
+        &.section-tax,
+        &.section-net-wage {
+            height: 200px;
+        }
+
+        &.section-tax {
+            background-color: #f1c40f;
+
+            .section-img {
+                width: 50px;
+                height: 50px;
+                background: url(/img/sprite.png) 134px 0px;
+                background-size: 224px 72px;
+            }
+        }
+
+        &.section-piz {
+            background-color: #3498db;
+        }
+
+        &.section-zz {
+            background-color: #8e44ad;
+        }
+
+        &.section-sv {
+            background-color: #e74c3c;
+        }
+
+        &.section-job-security {
+            background-color: #27ae60;
+        }
+
+        &.section-net-wage {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    }
+}
+
+.footer {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
 }
