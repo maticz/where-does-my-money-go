@@ -49,6 +49,7 @@ app.controller('MainCtrl', ['$scope', function ($scope) {
     $scope.svAmount = null;
     $scope.jobSecurityAmount = null;
     $scope.taxCategoriesAmounts = {};
+    $scope.taxCategoriesPopovers = {};
 
     $scope.isInitialPageShown = true;
     $scope.isTaxPageCategoriesPageShown = false;
