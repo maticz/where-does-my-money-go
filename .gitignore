@@ -1,0 +1,45 @@
+# Linux
+.*
+!.gitignore
+*~
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VIM
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# Python
+*.py[cod]
+*.egg
+*.egg-info
+develop-eggs
+.installed.cfg
+__pycache__
+pip-log.txt
+
+# C libs
+*.so
+
+# Translations
+*.mo
+
+# Virtualenv
+virtualenv
+
+# Other
+extra
