@@ -19,29 +19,29 @@
 <div class="row section section-piz" data-ng-show="!!pizAmount">
     <div class="section-value">{{ pizAmount | currency:"€" }}</div>
     <div class="section-description">Prispevek za pokojninsko in invalidsko zavarovanje</div>
-    <div class="section-img"></div>
+    <div popover-placement="left" popover="So prispevki iz katerih se plačujejo invalidske, družinske (članom umrlega upokojenca), starostne, državne (minimalna pokojnina) in vdovske pokojnine." popover-trigger="mouseenter" class="section-img"></div>
 </div>
 
 <div class="row section section-zz" data-ng-show="!!zzAmount">
     <div class="section-value">{{ zzAmount | currency:"€" }}</div>
     <div class="section-description">Prispevek za obvezno zdravstveno zavarovanje</div>
-    <div class="section-img"></div>
+    <div popover-placement="left" popover="Je Obvezno Zdravstveno zavarovanje za osebe s stalnim prebivališčem ali pridobitno dejavnostjo v Republiki Sloveniji." popover-trigger="mouseenter" class="section-img"></div>
 </div>
 
 <div class="row section section-sv" data-ng-show="!!svAmount">
     <div class="section-value">{{ svAmount | currency:"€" }}</div>
     <div class="section-description">Prispevek za starševsko varstvo</div>
-    <div class="section-img"></div>
+    <div popover-placement="left" popover="Je finančna in materijalna pomoč staršem. Iz njega se plačujejo starševski dodatek, pomoč ob rojstvu otroka, otroški dodatek, dodatek za veliko družino, dodatek za nego otroka in delno plačilo za izgubljeni dohodek." popover-trigger="mouseenter" class="section-img"></div>
 </div>
 
 <div class="row section section-job-security" data-ng-show="!!jobSecurityAmount">
     <div class="section-value">{{ jobSecurityAmount | currency:"€" }}</div>
     <div class="section-description">Prispevek za zaposlovanje</div>
-    <div class="section-img"></div>
+    <div popover-placement="left" popover="Je prispevek s katerim se plačuje zavarovanje iz katerega se plačuje v primeru brezposelnosti." popover-trigger="mouseenter" class="section-img"></div>
 </div>
 
 <div class="row section section-net-wage" data-ng-show="!!jobSecurityAmount">
     <div class="section-value">{{ netWage | currency:"€" }}</div>
     <div class="section-description">Neto plača</div>
-    <div class="section-img"></div>
+    <div popover-placement="left" popover="Je izplačilo/končni znesek, ki ga zaposleni dobi za opravljeno delo. Ne vsebuje dodatka za prevoz in malice." popover-trigger="mouseenter" class="section-img"></div>
 </div>
