@@ -71,6 +71,48 @@ body {
 .content .section.section-net-wage {
   background-color: rgba(255, 255, 255, 0.15);
 }
+.content .section.section-0 {
+  background-color: #1abc9c;
+}
+.content .section.section-1 {
+  background-color: #e67e22;
+}
+.content .section.section-2 {
+  background-color: #c0392b;
+}
+.content .section.section-3 {
+  background-color: #f39c12;
+}
+.content .section.section-4 {
+  background-color: #3498db;
+}
+.content .section.section-5 {
+  background-color: #16a085;
+}
+.content .section.section-6 {
+  background-color: #f1c40f;
+}
+.content .section.section-7 {
+  background-color: #c0392b;
+}
+.content .section.section-8 {
+  background-color: #3498db;
+}
+.content .section.section-9 {
+  background-color: #7f8c8d;
+}
+.content .section.section-10 {
+  background-color: #d35400;
+}
+.content .back-btn {
+  width: 45px;
+  height: 50px;
+  background: url(/img/sprite.png) 84px 0px;
+  background-size: 224px 72px;
+  position: absolute;
+  top: 400px;
+  left: -100px;
+}
 .footer {
   margin-top: 20px;
   color: rgba(255, 255, 255, 0.8);

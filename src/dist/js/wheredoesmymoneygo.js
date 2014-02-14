@@ -20,6 +20,25 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
 // Source: js/controllers/main.js
 /*global angular,app*/
+var data = {
+    'Zdravstveno varstvo': 104849156.00,
+    'Podjetništvo in konkurenčnost': 311820684.00,
+    'Kultura': 201398119.00,
+    'Izobraževanje in šport': 1441488039.00,
+    'Institucije političnega sistema in civilne družbe': 88732501.00,
+    'Institucije pravne drŽave, svobode in varnosti': 275866175.00,
+    'Upravljanje sistemov javne uprave': 512932734.00,
+    'Visoko šolstvo, znanost, tehnologija in informacijska druŽba': 709184932.00,
+    'Energetika': 70795363.00,
+    'Trg dela': 373341291.00,
+    'Kmetijstvo, gozdarstvo, ribištvo in prehrana': 457869797.00,
+    'Promet in prometna infrastruktura': 708520360.00,
+    'Servisiranje javnega dolga, plačila v evropsko unijo in rezerve': 251691657.00,
+    'Nacionalna varnost, obramba in zunanje zadeve': 928753962.00,
+    'Socialna varnost': 2451905070.00,
+    'Okoljska in prostorska politika': 355595154.00
+};
+
 app.controller('MainCtrl', ['$scope', function ($scope) {
     $scope.grossWage = null;
     $scope.taxBase = null;
@@ -29,6 +48,10 @@ app.controller('MainCtrl', ['$scope', function ($scope) {
     $scope.zzAmount = null;
     $scope.svAmount = null;
     $scope.jobSecurityAmount = null;
+    $scope.taxCategoriesAmounts = {};
+
+    $scope.isInitialPageShown = true;
+    $scope.isTaxPageCategoriesPageShown = false;
 
     $scope.calculatePIZ = function (grossWage) {
         return grossWage * 0.155;
@@ -48,7 +71,7 @@ app.controller('MainCtrl', ['$scope', function ($scope) {
 
     $scope.calculateTaxRelief = function (yearlyWage) {
         var result = null;
-        if (yearlyWage >= 10866.37) {
+        if (yearlyWage <= 10866.37) {
             result = 6519.82;
         } else if (yearlyWage > 10866.37 && yearlyWage <= 12570.89) {
             result = 4481.64;
@@ -79,6 +102,26 @@ app.controller('MainCtrl', ['$scope', function ($scope) {
         return result;
     };
 
+    $scope.calculateTaxCategories = function (taxAmount) {
+        var result = {};
+        var total = 0;
+        var category = null;
+        for (category in data) {
+            if (data.hasOwnProperty(category)) {
+                total += data[category];
+            }
+        }
+
+        for (category in data) {
+            if (data.hasOwnProperty(category)) {
+                console.log(total/data[category]);
+                result[category] = taxAmount * (data[category] / total);
+            }
+        }
+
+        return result;
+    };
+
     $scope.calculateAmounts = function () {
         if ($scope.grossWage) {
             var taxBase = $scope.calculateTaxBase($scope.grossWage);
@@ -88,10 +131,18 @@ app.controller('MainCtrl', ['$scope', function ($scope) {
             $scope.svAmount = $scope.calculateSV($scope.grossWage);
             $scope.jobSecurityAmount = $scope.calculateJobSecurity($scope.grossWage);
             $scope.netWage = $scope.grossWage - $scope.taxAmount - $scope.pizAmount - $scope.zzAmount - $scope.svAmount - $scope.jobSecurityAmount;
+
+            $scope.taxCategoriesAmounts = $scope.calculateTaxCategories($scope.taxAmount);
         }
     };
 
+    $scope.showInitialPage = function () {
+        $scope.isInitialPageShown = true;
+        $scope.isTaxPageCategoriesPageShown = false;
+    };
+
     $scope.showTaxPageCategorized = function () {
-        return;
+        $scope.isInitialPageShown = false;
+        $scope.isTaxPageCategoriesPageShown = true;
     };
 }]);
