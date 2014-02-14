@@ -1,0 +1,27 @@
+{
+  "name": "wheredoesmymoneygo",
+  "version": "0.0.1",
+  "authors": [
+    "Martina Ring <martina.ring@zemanta.com>",
+    "Rok Pregelj <rok.pregelj@zemanta.com>",
+    "Matic Žgur <mr.zgur@gmail.com>"
+  ],
+  "description": "Interactive display of the taxes and what are they used for.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.1",
+    "angular": "1.2.12",
+    "angular-route": "1.2.12",
+    "bootstrap": "3.1.1",
+    "angular-bootstrap": "0.10.0"
+  }
+}

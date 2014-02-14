@@ -1,0 +1,39 @@
+/* Variables and mixins */
+
+@body-background-color: #34495e;
+
+@default-font-color: #fff;
+
+@default-font-size: 20px;
+@large-font-size: 30px;
+
+.form-control {
+	height: 50px;
+	padding: 0px 20px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+    border: none;
+	/*.form-control-border();*/
+	/**/
+	/*&:focus {*/
+	/*	.form-control-border-focus();*/
+	/*}*/
+
+	/*&:hover {*/
+	/*	.form-control-border-hover();*/
+	/*}*/
+}
+
+/* General styles */
+
+body {
+    background-color: @body-background-color;
+	font-family: 'Open Sans', sans-serif;
+    color: @default-font-color;
+}
+
+/* Bootstrap customizations */
+
+.control-label {
+    color: @default-font-color !important;
+}

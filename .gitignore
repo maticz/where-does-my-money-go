@@ -23,6 +23,9 @@ Session.vim
 .netrwhist
 *~
 
+# npm
+node_modules
+
 # Python
 *.py[cod]
 *.egg
